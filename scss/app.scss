@@ -1,0 +1,522 @@
+@charset 'utf-8';
+
+@import 'settings';
+@import 'foundation';
+@import 'motion-ui';
+
+@include foundation-global-styles;
+@include foundation-grid;
+@include foundation-typography;
+@include foundation-button;
+@include foundation-forms;
+@include foundation-visibility-classes;
+@include foundation-float-classes;
+@include foundation-accordion;
+@include foundation-badge;
+@include foundation-breadcrumbs;
+@include foundation-button-group;
+@include foundation-callout;
+@include foundation-close-button;
+@include foundation-drilldown-menu;
+@include foundation-dropdown;
+@include foundation-dropdown-menu;
+@include foundation-flex-video;
+@include foundation-label;
+@include foundation-media-object;
+@include foundation-menu;
+@include foundation-off-canvas;
+@include foundation-orbit;
+@include foundation-pagination;
+@include foundation-progress-bar;
+@include foundation-slider;
+@include foundation-sticky;
+@include foundation-reveal;
+@include foundation-switch;
+@include foundation-table;
+@include foundation-tabs;
+@include foundation-thumbnail;
+@include foundation-title-bar;
+@include foundation-tooltip;
+@include foundation-top-bar;
+
+@include motion-ui-transitions;
+@include motion-ui-animations;
+
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC|Open+Sans');
+
+
+/* Variables */
+
+$bg-section: #EFEBE9;
+$headers-font-family: 'Amatic SC', cursive;
+$text-font-family:'Open Sans', sans-serif;
+
+// Clases generales
+.bg-section {
+  background-color: $bg-section;
+}
+p {
+font-family: $text-font-family;
+}
+h1,h2,h3,h4,h5 {
+  font-family: $headers-font-family;
+  }
+.fullWidth {
+   width: 100%;
+   margin-left: auto;
+   margin-right: auto;
+   max-width: initial;
+}
+.section-name {
+  background-color: #D7CCC8;
+  text-align: center;
+  padding: 1rem 0;
+  margin-bottom: 0;
+
+}
+
+/* ===================================== */
+/* ========= Landing Image ================ */
+/* ===================================== */
+
+.bg-image {
+  background-color: #3E2723;
+  background: url(../images/bg-image-3.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 85%;
+  margin-top: -100px;
+  position: relative;
+}
+.landing-text {
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+    h2 {
+    	 font-size: 5rem;
+        font-weight: 900;
+        line-height: 5.5rem;
+    }
+    p {
+      font-size: 1.5rem;
+      font-weight: 900;
+    }
+}
+.fa-angle-down {
+  color: #fff;
+  top: 90%;
+  left: 50%;
+  position: absolute;
+}
+
+
+/* ===================================== */
+/* ========= Historia ===================== */
+/* ===================================== */
+
+// Historia small
+.left-50 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: $bg-section;
+  width: 100%;
+  float: left;
+  height: 400px;
+  padding: 20px;
+}
+.right-50 {
+  background-image: url(../images/bar-toful.jpg);
+  width: 100%;
+  height: 400px;
+  float: left;
+  overflow: hidden;
+}
+
+// Historia Large and up
+@media screen and (min-width: 64em) {
+.left-50 {
+  width: 50%;
+  float: left;
+  height: 500px;
+  padding: 30px;
+}
+.right-50 {
+  background-image: url(../images/bar-toful.jpg);
+  width: 50%;
+  height: 500px;
+  float: left;
+  overflow: hidden;
+}
+}
+footer {
+  padding-top: 20px;
+}
+
+/* ===================================== */
+/* ========= Top Bar ===================== */
+/* ===================================== */
+
+
+// El button menu-icon se fué con la actualización...
+
+.hamburguer{
+      float: left;
+      width:100px;
+      height:100px;
+      box-sizing:border-box;
+      text-align:center; 
+  
+      font-family:sans-serif;
+      line-height:104px;
+      color:white;
+      font-size:50px;
+
+      cursor:pointer;
+  
+      -ms-transform: rotate(90deg); /* IE 9 */
+      -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+      transform: rotate(90deg);
+}
+
+/* Variables Top- bar */
+
+$logo-width: 118px;
+// Reduce px value to increase space between logo and menu text
+$logo-padding: $logo-width - 32px; 
+// Leave alone
+$logo-margin: - ($logo-width / 2);
+
+.top-bar {
+  position: relative;
+  z-index: 2;
+  padding-top: 30px;
+}
+.title-bar {
+	position: relative;
+	z-index: 2;
+}
+.menu > li > a {
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #E0E0E0;
+        	&:hover {
+        	transition: color .1s 0s ease-in-out;
+    		color:#fff;
+    	}
+    text-align: center;
+    font-size: 1rem;
+    padding: 0.7rem 1rem;
+}
+
+/* Top bar Small Navigation */
+.logo-small {
+  	float: right;
+   	width: $logo-width;
+      	height:  80px;
+      	margin-top: 20px;
+}
+.title-bar {
+  padding: 0 0.5rem;
+}
+.menu-icon,
+.title-bar-title {
+  position: relative;
+  top: 35px;
+}
+.top-bar, .top-bar ul {
+    background-color: #0a0a0a;
+}
+
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+    nav.top-bar{
+    padding-bottom: 40px;
+    }
+    h1 {
+    font-size: 3rem;
+    }
+    h3 {
+    font-size: 2.5rem;
+    }
+}
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+
+  .bg-image {
+   margin-top: -160px;
+   }
+   .landing-text-center {
+    top: 55%;
+   }
+  .top-bar,.top-bar ul {
+    background-color: transparent;
+  }
+  .logo {
+      width: $logo-width;
+      height:  80px;
+      text-align: center;
+      margin: 0 auto;
+    }
+  
+  // Right part
+  .top-bar-right {
+    width: 50% !important; 
+    ul {
+      li > a{
+        padding: 0.7rem 0.5rem;
+      }
+      float: left;
+    }
+  }
+  // Left part
+  .top-bar-left {
+    width:  50% !important;
+    ul {
+      li > a{
+        padding: 0.7rem 0.5rem;
+      }
+      float: right;
+    }
+  }
+
+}
+
+/* Large and up */
+@media screen and (min-width: 64em) {
+  .top-bar,.top-bar ul {
+    background-color: transparent;
+}
+  .logo-wrapper {
+    position: relative;
+    .logo {
+      width: $logo-width;
+      height:  80px;
+      position: absolute;
+      left: 50%;
+      right: 50%;
+      top: -12px;
+      margin-left: $logo-margin;
+    }
+  }
+  // Right part
+  .top-bar-right {
+    width: 50% !important;
+    padding-left: $logo-padding;
+    ul {
+      float: left;
+    }
+  }
+  // Left part
+  .top-bar-left {
+    width:  50% !important;
+    padding-right: $logo-padding;
+    
+    ul {
+      float: right;
+    }
+  }
+}
+
+/* ===================================== */
+/* ========= Comida & Bebida ============== */
+/* ===================================== */
+
+$global-radius: 4px;
+
+
+.image-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.image-overlay-content {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0
+}
+
+// modifier classes
+
+.overlay-fade-in {
+  
+  img {
+    transition: all 0.2s linear;
+  }
+  
+  .image-overlay-content {
+    opacity: 0;
+    background-color: rgba(0,0,0, 0.4);
+    transition: all 0.4s ease-in-out;
+  }
+  
+  h2 {
+    color: #f2f2f2;
+    font-size: 2.5rem;
+    margin-top: 42%;
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+    background: rgba(0,0,0,0.7);
+  }
+
+  &:hover img {
+
+    transform: scale(1.2);
+  }
+  
+  &:hover .image-overlay-content {
+    opacity: 1;
+  }
+  
+  &:hover h2 {
+    opacity: 1;
+  }
+  
+} 
+
+/* ============== Masonry ======================= */
+
+
+* { box-sizing: border-box; }
+
+/* force scrollbar */
+html { overflow-y: scroll; }
+
+body { font-family: sans-serif; }
+
+/* ---- grid ---- */
+
+.grid {
+  background: #DDD;
+}
+
+/* clear fix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- .grid-item ---- */
+
+.grid-sizer,
+.grid-item {
+  width: 33.333%;
+}
+
+.grid-item {
+  float: left;
+}
+
+.grid-item img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ===================================== */
+/* ========= Contacto ==================== */
+/* ===================================== */
+.horario {
+  background-color: #212121;
+  padding: 30px;
+  color: white;
+  text-align: center;
+
+}
+.mapa {
+  width: 50%;
+  float: left;
+  margin-bottom: -6px;
+}
+.foto-mapa {
+  background-image: url(../images/bar-toful-playa.jpg);
+  width: 50%;
+  height: 500px;
+  float: left;
+  overflow: hidden;
+}
+.Center-Container {
+  position: relative;
+}
+.Absolute-Center {
+  background-color: rgb(255, 255, 255);
+  -webkit-box-shadow: rgba(74, 79, 79, 0.498039) 0px 0px 10px 0px;
+  box-shadow: rgba(74, 79, 79, 0.498039) 0px 0px 10px 0px;
+  width: 20%;
+  height: 28%;
+  overflow: auto;
+  margin: auto;
+  position: absolute;
+  top: 180px; left: 0; bottom: 0; right: 0;
+}
+  .vcard {
+    color: #f5f5f5;
+    text-align: center;
+      img{
+        max-width: 140px;
+        margin-bottom: 20px;
+      }
+      background-color: #424242;
+      height: 223px;
+      display: inline-block;
+      margin: 170px auto auto;
+      border: 1px solid #eee;
+      padding: 10px;;
+
+      li {
+        margin: 0;
+        display: block;
+      }
+      .fn {
+        font-weight: normal;
+        font-size: 1rem;
+      }
+    }
+
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+
+ .foto-mapa {
+  background-image: url(../images/bar-toful-playa.jpg);
+  width: 100%;
+  height: 500px;
+  float: left;
+  overflow: hidden;
+}
+.Center-Container {
+  position: relative;
+}
+.Absolute-Center {
+  width: 40%;
+  height: 23%;
+  margin: auto;
+  position: absolute;
+  top: 300px; left: 0; bottom: 0; right: 0;
+}
+  .vcard {
+      height: 223px;  
+}
+
+}
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+  .Absolute-Center {
+  width: 35%;
+  height: 35%;
+}
+
+}
